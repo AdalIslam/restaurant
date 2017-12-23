@@ -22,7 +22,7 @@
 
             if($row["cuUserName"]==$username && $row["cuPassword"]==$password)
             {
-                header("Location:cushome.html");
+                header("Location:user/UserIndex.html");
             }
 
             else
