@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log-In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "center">
+        <div class="right">
+            <p>
+                <a href="Home.html">Home</a> <a href="login.html">Login </a> <a href="register.html">Registration</a>
+            </p>
+        </div>
+        <hr>
+        <form action="loginhandler.php" method="post">
+            <fieldset>
+                    <legend>LOGIN</legend>
+
+                    <label><b>Username :</b></label>
+                    <input type= "text" placeholder="Enter Username" name="uname" style="margin-left: 2%" required>
+                    <br>
+                    <label><b>Password :</b></label>
+                    <input type="password" placeholder="Enter Password" name="upass" style="margin-left: 2%" required>
+                    <br>
+                    <hr>
+                    <input name="remember" type="checkbox" value=""/><label>Remember Me</label>
+                    <br>
+                    <button type="submit">Login </button>
+                </fieldset>
+        </form>
+        <div class="footer">
+            <p>Copyright &copy; by AIUB students</p>
+        </div>
+    </div>
+</body>
+</html>

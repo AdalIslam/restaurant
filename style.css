@@ -1,0 +1,44 @@
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.right{
+    margin: auto;
+    width : 96%;
+    border: 3px solid black;
+    padding: 1rem;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+button{
+    background-color: gray;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+form {
+    border: 3px solid #f1f1f1;
+}

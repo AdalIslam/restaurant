@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class= "center">
+        <div class="right">
+            <p>
+                <a href="Home.html">Home</a> <a href="login.html">Login </a> <a href="register.html">Registration</a>
+            </p>
+        </div>
+        <hr>
+        <div align="center">
+            <form action="registerhandler.php">
+                <fieldset>
+                        <legend>Registration</legend>
+
+                        <label><b>Name</b></label>
+                        <input type="text" placeholder="Enter Name" name="name" />
+                        <br>
+                        <label><b>Email</b></label>
+                        <input type="text" placeholder="Enter email" name="email" />
+                        <br>
+                        <label><b>Username</b></label>
+                        <input type="text" placeholder="Enter username" name="username" required>
+                        <br>
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                        <br>
+                        <label><b>Retype Password</b></label>
+                        <input type="password" placeholder="Retype password" name="retypepassword"/>
+                        <br>
+                        <legend>Date of Birth</legend>
+
+                        <table>
+                            <tr>
+                                <td colspan="2" align="center"><label>dd</label></td>
+                                <td align="center"><label>mm</label></td>
+                                <td colspan="2" align="center"><label>yyyy</label></td>
+                            </tr>
+
+                            <tr>
+                                <td><input name="day"/></td>
+                                <td>/</td>
+                                <td><input name="month"/></td>
+                                <td>/</td>
+                                <td><input name="year"/></td>
+                            </tr>
+                        </table>
+                        <legend>Gender</legend>
+
+                        <input name="gender" type="radio" value="male"/><label>Male</label>
+                        <input name="gender" type="radio" value="female"/><label>Female</label>
+                        <input name="gender" type="radio" value="other"/><label>Other</label>
+                        <hr>
+                        <br>
+                        <button type="submit">Submit</button>
+                     </fieldset>
+            </form>
+        </div>
+        <div class="footer">
+            <p>Copyright &copy; by AIUB students</p>
+        </div>
+    </div>
+</body>
+</html>
