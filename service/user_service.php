@@ -1,13 +1,39 @@
 <?php include("data_access.php"); ?>
 <?php
     function addRegistered($user){
-        $sql = "INSERT INTO `registration`(`id`, `name`, `password`, `email`, `username`, `address`, `phonenumber`, `gender`, `profilepicture`) VALUES (NULL,'$user[name]','$user[password]','$user[email]','$user[username]','$user[address]','$user[phonenumber]','$user[gender]',NULL)";
+        $sql = "INSERT INTO `registration`(`id`, `name`, `password`, `email`, `username`, `address`, `phonenumber`, `gender` , `profilepicture`) VALUES (NULL,'$user[name]','$user[password]','$user[email]','$user[username]','$user[address]','$user[phonenumber]','$user[gender]',NULL)";
         $result = executeSQL($sql);
         return $result;
     }
     function addUser($user){
-		echo "rukai";
-        $sql = "INSERT INTO `user`(`id`, `name`, `password`, `email`, `username`, `address`, `phonenumber`, `gender`, `profilepicture`) VALUES (NULL,'$user[name]','$user[password]','$user[email]','$user[username]','$user[address]','$user[phonenumber]','$user[gender]',NULL)";
+		
+        $sql = "INSERT INTO `user`(`id`, `name`, `password`, `email`, `username`, `address`, `phonenumber`, `gender`, `login` , `profilepicture`) VALUES (NULL,'$user[name]','$user[password]','$user[email]','$user[username]','$user[address]','$user[phonenumber]','$user[gender]',NULL,NULL)";
+        $result = executeSQL($sql);
+        return $result;
+    }
+	function loggin_time($userId){
+		
+		 $d= date('d-m-Y');
+        $sql = "UPDATE `user` SET `login` = '$d'  WHERE id=$userId ";
+        $result = executeSQL($sql);
+        return $result;
+    }
+	function userSince($userId){
+		//echo "since paise sevice e";
+		 $d= date('d-m-Y');
+        $sql = "UPDATE `user` SET `since` = '$d'  WHERE id=$userId ";
+        $result = executeSQL($sql);
+        return $result;
+    }
+	function blockUser($userId){
+		echo "block";
+        $sql = "UPDATE `user` SET `mode` = 'blocked'  WHERE id=$userId ";
+        $result = executeSQL($sql);
+        return $result;
+    }
+	function unblockUser($userId){
+		echo "unblock";
+        $sql = "UPDATE `user` SET `mode` = 'unblocked'  WHERE id=$userId ";
         $result = executeSQL($sql);
         return $result;
     }
@@ -55,6 +81,7 @@
     }
     
     function getUserById($userId){
+		echo "search currebt user";
         $sql = "SELECT * FROM user WHERE id=$userId";        
         $result = executeSQL($sql);
         
@@ -82,7 +109,7 @@
         
         return $user;
     }
-	 function getRegisteredsByName($userName){
+	 function getRegisteredsByName($username){
         $sql = "SELECT * FROM registration WHERE name LIKE '%$username%'";
         $result = executeSQL($sql);
         
