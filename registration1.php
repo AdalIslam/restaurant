@@ -1,6 +1,5 @@
-
 <?php include "service/user_service.php"; ?>
-
+<?php include "service/validation_reg.php"; ?>
 <?php
     if($_SERVER['REQUEST_METHOD']=="POST"){
 	    $user['name']=$_POST['name'];
