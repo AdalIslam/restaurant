@@ -44,6 +44,7 @@
 			   <a href="block.php?id=<?= $user['id'] ?>">&nbsp;&nbsp;block</a>
 			   <a href="unblock.php?id=<?= $user['id'] ?>">&nbsp;&nbsp;unblock</a>
 			   <a href="delet.php?id=<?= $user['id'] ?>">&nbsp;&nbsp;delet</a>
+			   <button onclick()> delet</button>
                 
 		  
 		</td>
