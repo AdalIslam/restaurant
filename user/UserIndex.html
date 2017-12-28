@@ -1,17 +1,25 @@
+<?phpsession_start();
+//var_dump( $_SESSION['CurrentUser']);
+ include("../service/admin_service.php");
+
+$user=getUserById($CurrentAdminId);
+var_dump($_SESSION['CurrentUser']['username']);
+?>
+ 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bazinga</title>
+        
     </head>
 	<body>	
 		<center>
-		<form action="handler.php">
+		<form  >
 			<table border='1' cellpadding='5'cellspacing='0' width="100%" height="100%">
 			<thead>
 				<tr>
 					<th align="right" colspan="2"> 
 					<img src="alpha.jpg"  height="40" align="left">
-					<a href="profile.html" target="contentFrame">Username</a> |
+					<a href="profile.html" target="contentFrame"><?=$_SESSION['CurrentUser']['username']?></a> |
 					<a href="../Index.html" action="">Logout</a>
 					<center>
 					<h3>Name of restaurant</h3>

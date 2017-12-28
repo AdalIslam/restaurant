@@ -1,0 +1,82 @@
+<?php Session_start();
+$userid=$_SESSION['CurrentAdminId'];
+$user=getAdminById($userid);
+echo $userid;?>
+<?php include("../service/data_access.php"); ?>
+<?php include("../service/admin_service.php"); ?>  
+
+ 
+<?php
+
+echo "hae";
+
+?>
+
+<html>
+	<body>	
+		<center>
+		<form >
+			<table border='1' cellpadding='5'cellspacing='0' width="100%" height="100%">
+			<thead>
+				<tr>
+					<th align="right" colspan="2"> 
+					<img src="alpha.jpg"  height="40" align="left">
+					<a href="profile.php"> <?php $user['name'] ?></a> 
+					<a href="../Index.html">Logout</a>
+					<center>
+					<h3>Name of restaurant </h3>
+					</center>
+					
+					</th>
+				</tr>
+				<tr>
+					<td colspan="2" align="middle">
+					<a href="admin.html" target="contentFrame">Home</a> |
+					<a href="userlist.php" target="contentFrame">User List</a> |
+					<a href="menu.php" target="contentFrame">Menu</a> |
+					<a href="order.php" target="contentFrame">Orders</a> |
+					<a href="OfferAdmin.php" target="contentFrame">Offers</a> |
+					<a href="report.html" target="contentFrame">Reports</a>
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				
+					
+				
+				<tr>
+					<td width="80%" align="center"> 
+					<br/>
+                    <iframe name="contentFrame" frameborder="0" width="100%" height="475" src="admin.html"></iframe>
+					</td>
+					<td valign="top" >Account<br/>
+						<hr>
+						<ul>
+						<li><a href="admin.html" target="contentFrame">Home</a></li>
+						<li><a href="viewprofile.html" target="contentFrame">View Profile</a></li>
+						<li><a href="editprofile.html" target="contentFrame">Edit Profile</a></li>
+						<li><a href="change.html" target="contentFrame">Change Profile Picture</a></li>
+						<li><a href="changepass.html" target="contentFrame">Change Password</a></li>
+						<li><a href="home.html">Logout</a></li>
+						</ul>
+						
+					</td>
+				</tr>
+				</tbody>
+				<tr >
+				<td colspan="2"> 
+				<fieldset>				
+				<a href="admin.html">Contact us</a> <br>
+				<a href="admin.html">About us</a> 
+				
+				<center>
+				Copyright © 2017
+				</center>
+				</fieldset>
+				</td> 
+				</tr>
+			</table>
+		</form>
+		</center>
+	</body>
+</html>

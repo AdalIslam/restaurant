@@ -1,9 +1,8 @@
-<?php include "service/user_service.php"; ?>
-<?php include "service/admin_service.php";?>
-<?php include "service/validation_login.php";?>
+<?php include "../service/user_service.php"; ?>
+<?php include "../service/admin_service.php";?>
 <?php
    
-  //Session_start();
+   
    $c=0;
    $k="_parent";
    if ($_SERVER['REQUEST_METHOD'] == "POST")
@@ -28,11 +27,13 @@
         			{   // here , i use userId as user name bt for user used userid for id 
 							if(($admin['adminId']==$userId)&& ($admin['password']==$password )) 
 								{  // echo "thikase";
+							        Session_start();
+							       $_SESSION['CurrentUserId']=$admin['id'];
 							        $c=1;
 									//<a href="editoffer.php?id=<?= $offer['offerId'] ?">username</a>
-									//$_SESSION['CurrentUser']=$admin['name'];
+									
          					   	    echo "<script>
-									document.location='adminpage/adminindex.php';
+									document.location='adminindex.php';
 									//document.location='new 1.php';
 									 </script>";
 								} 
@@ -48,11 +49,12 @@
         			{  
 							if((($user["id"]==$userId )&& ($user["password"]==$password )) &&($user["mode"]!="blocked" ) )
 								{  
+									 Session_start();
+									$_SESSION['CurrentUserId']=$user['id'];
 									$c=1;
-									$_SESSION['CurrentUser']=$user['name'];
 									 echo "<script>
 									alert('login successfull');
-									document.location='user/UserIndex.html';
+									//document.location='user/UserIndex.html';
 									 </script>";
 								} 
 							
@@ -69,7 +71,7 @@
 				 </script>";
 				  
 				}
-     /*		
+     /*	
      // Session_start();
 									$_SESSION['CurrentUser']=$admin['name'];
 							        var_dump($_SESSION);	 
@@ -77,32 +79,10 @@
 		//if(loggin_time(4)==true)
 		//	echo "login time added";
 	}
+	var_dump($_SESSION);
 }
 ?>
 <html>
-<style>
-html{ 
- background-image: url("food.jpg") repeat center fixed; 
-  background-size: cover;
-}
-
-.button {
-     background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-	
-
-}
-	}
-
-</style>
 <fieldset>
     <legend><b>LOGIN</b></legend>
     <form method="post" id="loginform" action="" target="<?=$k?>">
@@ -116,7 +96,7 @@ html{
 			</tr>
 		   
             <tr>
-                <td>User Name</td>
+                <td>User ID</td>
                 <td>:</td>
                 <td><input name="userid" type="text" required></td>
             </tr>
@@ -129,7 +109,7 @@ html{
         <hr />
         <input name="remember" type="checkbox">Remember Me
         <br/><br/>
-        <input type="button" class="button" value="Submit">
+        <input type="submit" value="Submit">
         <a href="forgot_password.html">Forgot Password?</a>
     </form>
 </fieldset>
